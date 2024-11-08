@@ -60,7 +60,7 @@ export default function CoinGecko() {
     useEffect(() => {
         fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
             .then(res => res.json())
-            .then(json => {
+            .then(json => { 
                 setState(json);
                 setLoading(false);
             })
