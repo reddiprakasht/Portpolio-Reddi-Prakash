@@ -1,26 +1,25 @@
 
-// import './App.css';
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/js/bootstrap.bundle.js'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import Home from './Components/Home';
-import WeatherAppi from './Components/WeatherAppi';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import CoinGecko from './Components/CoinGecko';
+import Home from './Components/Home';
 import StockMarket from './Components/Stockmarket';
+import WeatherAppi from './Components/WeatherAppi';
 function App() {
   return (
-    <div>
+    <div className='container-fluid text-center'>
       <BrowserRouter>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
-            <Link to="" className="navbar-brand" href="#">Navbar</Link>
+            <Link to="/" className="navbar-brand" href="#">Navbar</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  {/* <Link to="/" className="nav-link active" aria-current="page" href="#">Home</Link> */}
+                  <Link to="/" className="nav-link active" aria-current="page" href="#">Home</Link>
                 </li>
                 <li className="nav-item">
                   <Link to="" className="nav-link" href="#">link</Link>
@@ -30,7 +29,7 @@ function App() {
             APi's
           </Link>
           <ul className="dropdown-menu">
-            <li><Link to='/' className="dropdown-item">CoinGecko</Link></li>
+            <li><Link to='/coin' className="dropdown-item">CoinGecko</Link></li>
             <li><Link to='/weather' className="dropdown-item">Weather</Link></li>
             <li><hr className="dropdown-divider"/></li>
             <li><Link className="dropdown-item" to="stock">Something else here</Link></li>
@@ -48,13 +47,13 @@ function App() {
           </div>
         </nav>
 
-        <div className='container-fluid'>
+        <div className=''>
           <div className='row'>
 
             <Routes>
-              {/* <Route path='/' element={<Home />}></Route> */}
+              <Route path='/' element={<Home />}></Route>
               <Route path='/weather' element={<WeatherAppi/>}></Route>
-              <Route path='/' element={<CoinGecko/>}></Route>
+              <Route path='/coin' element={<CoinGecko/>}></Route>
               <Route path='/stock' element={<StockMarket/>}></Route>
             </Routes>
 
